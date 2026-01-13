@@ -3,3 +3,12 @@
     padding: 0;
     margin: 0;
 }
+
+.user {
+    display: flex;/* background-color: azure; */
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+}

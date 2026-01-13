@@ -2,23 +2,21 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import Logo from "@/images/logos/logo-ts.png";
+import Icon from "@/images/logos/icon.png";
 
 type HeaderProps = {
-  setSidebarVisibility: React.Dispatch<React.SetStateAction<boolean>>;
-  isSidebarVisibility: boolean;
+  username?: string;
 }
 
-function Header({isSidebarVisibility, setSidebarVisibility}: HeaderProps) {
+function Header({username}: HeaderProps) {
    
-  const handleClick = () => {
-    console.log("clicked");
-    setSidebarVisibility(!isSidebarVisibility);
-  };
-
   return (
     <header className="page-header">
       <h1 className={styles.logo}><Image src={Logo} alt="Typewriter.io" width={210} /></h1>
-      <button onClick={handleClick}>אפשרויות</button>
+      <div className={styles.user}>
+        <h2>{username}</h2>
+        <Image src={Icon} alt="Typewriter.io" width={50} />
+      </div>
     </header>
   );
 }

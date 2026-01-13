@@ -1,61 +1,66 @@
 @keyframes slideInLeft {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-    @keyframes slideOutRight {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 340px;
-    /* height: 600px; */
-    background-color: rgba(197, 169, 129, 0.95);
-    color: var(--text-primary);
-    position: absolute;
-        left: 0;
-        top: 9.9%;
-        bottom: 0;
-    padding: 10px 40px;
-    margin: 0px ;
-    border-radius: 0 0 15px 15px;
-    transition: all 0.7s ease-in-out;
-    animation: 1s ease-in-out 1 alternate slideInLeft;
-    z-index: 1;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: 1px;
-    scrollbar-color: var(--foreground) var(--foreground-transparent);
-    box-shadow: 5px 5px 10px rgba(168, 168, 168, 0.5);  
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideOutLeft {
+  0% {
+    /* transform: translateX(0); */
+    opacity: 1;
+  }
+  100% {
+    /* transform: translateX(-100%); */
+    opacity: 0;
+  }
 }
 
-.container.exit {
-    animation: 1s ease-in-out 1 alternate slideOutLeft;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 340px;
+  /* height: 600px; */
+  background-color: rgba(197, 169, 129, 0.95);
+  color: var(--text-primary);
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  padding: 10px 40px;
+  margin: 0px;
+  border-radius: 0 15px 15px 0px;
+  transition: all 0.7s ease-in-out;
+  animation: slideInLeft 0.7s linear 0s 1 normal forwards;
+  z-index: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: 1px;
+  scrollbar-color: var(--foreground) var(--foreground-transparent);
+  box-shadow: 5px 5px 10px rgba(168, 168, 168, 0.5);
+}
+
+.exit {
+  animation: slideOutLeft 2s linear 0s 1 normal forwards;
+  transition: all 0.7s ease-in-out;
 }
 
 @media (max-width: 768px) {
-    .container {
-      width: 250px;
-    }
+  .container {
+    width: 250px;
   }
+}
 
 @media (max-width: 480px) {
-    .container {
-      width: 100%;
-      top: 12%;
-      animation: 1s ease-in-out 1 alternate slideInLeft;
-    }
+  .container {
+    width: 100%;
+    top: 12%;
+    animation: 1s ease-in-out 1 alternate slideInLeft;
   }
+}

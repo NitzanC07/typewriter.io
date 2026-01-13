@@ -25,24 +25,20 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
 
-  const [sidebarVisibility, setSidebarVisibility] = useState(false); 
-
-  useEffect(() => {
-    console.log("visible", sidebarVisibility);
-  }, [sidebarVisibility]);
+  // const [isSidebarVisibility, setSidebarVisibility] = useState(false); 
 
   return (
     <html lang="he">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="page-background">
           <div className="page-frame">
-            <Header isSidebarVisibility={sidebarVisibility} setSidebarVisibility={setSidebarVisibility} />
+            <Header username="ניצן"/>
 
             <main className="main">
               {children}
             </main>
 
-            {sidebarVisibility && <Sidebar />}
+            {/* {isSidebarVisibility && <Sidebar isVisibility={isSidebarVisibility} />} */}
           </div>
         </div>
       </body>
