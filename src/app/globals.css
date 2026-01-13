@@ -1,13 +1,15 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+/** @Color palette
+  --background-primary: #E6E6E6;
+  --background-secondary: #C5A880;
+  --text-primary: #0F0F0F;
+  --text-secondary: #532E1C;
+  */
+  
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --background: #E6E6E6;
+    --foreground: #532E1C;
+    --text-primary: #0F0F0F;
+    --text-secondary: #C5A880;
 }
 
 html,
@@ -22,6 +24,64 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+}
+
+.page-background {
+  --background: #0F0F0F;
+  --foreground: #E6E6E6;
+
+  --text-primary: #0F0F0F;
+  --text-secondary: #532E1C;
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  --button-secondary-border: #ebebeb;
+
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+}
+
+.page-frame {
+  display: flex;
+  height: 95vh;;
+  width: 97vw;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--foreground);
+  padding: 10px 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--text-secondary);
+  /* background-color: #C5A880; */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: 1px;
+  scrollbar-color: var(--text-secondary) var(--foreground);
 }
 
 * {
@@ -35,8 +95,6 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  cursor: pointer;
 }
