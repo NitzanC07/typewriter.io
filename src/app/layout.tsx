@@ -1,9 +1,10 @@
+'use client';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import Logo from "/images/logos/logo.png";
 import Header from "./components/Header/Header";
+import { useEffect, useState } from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,24 +16,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Typewriter.io",
-  description: "Education and Technology",
-};
+// export const metadata: Metadata = {
+//   title: "Typewriter.io",
+//   description: "Education and Technology",
+// };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+
+  const [sidebarVisibility, setSidebarVisibility] = useState(false); 
+
+  useEffect(() => {
+    console.log("visible", sidebarVisibility);
+  }, [sidebarVisibility]);
+
   return (
     <html lang="he">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="page-background">
           <div className="page-frame">
-            <Header />
+            <Header isSidebarVisibility={sidebarVisibility} setSidebarVisibility={setSidebarVisibility} />
 
-            <main className="main">{children}</main>
+            <main className="main">
+              {children}
+            </main>
+
+            {sidebarVisibility && <Sidebar />}
           </div>
         </div>
       </body>

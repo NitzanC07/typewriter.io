@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+<img src="./src/images/logos/logo-ts.png" alt="Typewriter.io logo" width="250px" />
 
-First, run the development server:
+## Coding throw history
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*Typewriter.io* is a unique educational platform for children and teenagers, where the technical world of web development meets the rich narratives of history. Our course, "Time Travel Through Web Development", follows a project-based learning approach: students master professional coding skills and immediately apply them to document and explore diverse historical topics.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### The Journey: From Ink to Code
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The curriculum is designed as a gradual progression:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Building the Foundation: Students begin with the anatomy of HTML, using headings, paragraphs, and lists to give voice to historical events.
+- Design & Aesthetics: Using a vintage-inspired palette (Beige, Brown, and Slate), learners apply CSS to create atmosphere and visual depth.
+- Logic & Interactivity: Through JavaScript, students add dynamic layers to their stories, transforming static pages into interactive historical archives.
 
-## Learn More
+#### The Outcome
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+By the end of the course, each student develops a personal website. This final project is more than just a technical achievement; it is a creative portfolio that showcases their coding proficiency alongside their unique perspective on history through creative writing.
+Typewriter.io empowers young creators to "type" the future by exploring the past, bridging the gap between traditional storytelling and modern digital craftsmanship.
