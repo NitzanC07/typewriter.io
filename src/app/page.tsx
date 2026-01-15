@@ -1,24 +1,55 @@
 "use client";
 import { useState } from "react";
 import styles from "./page.module.css";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Image from "next/image";
+import Logo from "../images/logos/logo-ts.png";
+import Popup from "./components/Popup/Popup";
+import Link from "next/link";
 
 export default function Home() {
-      
-  const [isSidebarVisibility, setSidebarVisibility] = useState(false); 
+
+  const [isPopupVisible, setPopupVisibility] = useState(false);
+  const [titlePopup, setTitlePopup] = useState("");
+  const [contentPopup, setContentPopup] = useState("");
+
+  const handlePopup = () => {
+    setPopupVisibility(!isPopupVisible);
+  }
+
+  const login = () => {
+    setTitlePopup("התחברות");
+    setContentPopup("התחברות");
+    handlePopup();  
+  }
+
+  const register = () => {
+    setTitlePopup("הרשמה");
+    setContentPopup("הרשמה");
+    handlePopup();  
+  }
 
   return (
     <div className={styles.page}>
-      
-      <main className={styles.mainContent}>
-        {Array.from({ length: 100 }).map((_, index) => (
-          <div key={index} className={styles.test}>TEST</div>
-        ))}
+      <main className={styles.mainContainer}>
+        <div className={styles.logoContainer}>
+          <Image className={styles.logo} src={Logo} alt="Typewriter.io" />
+          <section className={styles.slogenContainer}>
+            <div className={styles.s1}><p className={styles.slogen}>Type the past, </p></div>
+            <div className={styles.s2}><p className={styles.slogen}>Build the future - </p></div>
+            <div className={styles.s3}><p className={styles.slogen}>Enjoy the journey.</p></div>
+          </section>
+          <section className={styles.content}>
+            <p>תקציר</p>
+            <div>
+              <button onClick={login}>התחברות</button>
+              <button onClick={register}>הרשמה</button>
+            </div>
+            <Link href="/course">קורס: פיתוח אתרי אינטרנט דרך מסע בזמן</Link>
+          </section>
+        </div>
       </main>
-      <nav className={styles.navigator}>
-        <button className={styles.menuButton} onClick={() => setSidebarVisibility(!isSidebarVisibility)}>M</button>
-      </nav>
-      {isSidebarVisibility && <Sidebar isVisibility={isSidebarVisibility} />}
+
+      {isPopupVisible && <Popup handlePopup={handlePopup} title={titlePopup} content={contentPopup} />}
     </div>
   );
 }

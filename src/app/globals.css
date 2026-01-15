@@ -101,4 +101,17 @@ a {
 
 button {
   cursor: pointer;
+  border: none; 
+  background-color: #532E1C;
+  color: #f0f0f0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 7px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #383838;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }

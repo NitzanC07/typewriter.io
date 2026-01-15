@@ -1,3 +1,22 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
 .page {
   display: flex;
   flex-direction: column;
@@ -8,58 +27,75 @@
   position: relative;
 }
 
-.mainContent {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: 10px 50px;
-}
-
-@media (max-width: 768px) {
-  .mainContent {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .mainContent {
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
-  }
-}
-
-.navigator {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 100%;
-  padding: 0 4px;
-  background-color: var(--foreground-transparent);
-  color: var(--foreground);
+.mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0;
 }
 
-.menuButton {
-  /* position: absolute; */
-  /* top: 10px;
-  left: 10px; */
-  width: 45px;
-  height: 45px;
-  margin: 5px 0;
-  border-radius: 50%;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-  background-color: rgba(197, 169, 129, 0.95);
-  color: var(--text-primary);
-  border: none;
-  cursor: pointer;
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 300px;
 }
 
-.test {
-  background-color: var(--background);
-  color: var(--foreground);
-  width: 200px;
-  height: 200px;
-  margin: 10px 0;
+.logo {
+  width: 600px;
+  animation: fadeIn 2s ease-in-out 0.2s 1 normal both;
+}
+
+
+.slogenContainer {
+  direction: ltr;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogen {
+  direction: ltr;
+  font-size: 1.5rem;
+  margin-left: 7px;
+}
+
+.s1 {
+  animation: fadeIn 1s ease-in-out 2.5s 1 normal both;
+}
+.s2 {
+  animation: fadeIn 1s ease-in-out 3.5s 1 normal both;
+}
+.s3 {
+  animation: fadeIn 1s ease-in-out 4.5s 1 normal both;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  margin: 40px 0;
+  animation: fadeIn 1s ease-in-out 5.5s 1 normal both;
+}
+
+@media screen and (max-width: 360px) {
+  .logo {
+    width: 280px;
+  }
+  .slogenContainer {
+    flex-direction: column;
+  }
+  .slogen {
+   font-size: 1rem;
+  }
 }

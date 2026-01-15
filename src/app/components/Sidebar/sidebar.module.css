@@ -25,12 +25,12 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 340px;
-  /* height: 600px; */
+  height: 600px;
   background-color: rgba(197, 169, 129, 0.95);
   color: var(--text-primary);
   position: absolute;
-  left: 50px;
-  top: 0;
+  left: 27px;
+  top: 102px;
   bottom: 0;
   padding: 10px 40px;
   margin: 0px;
@@ -42,7 +42,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: 1px;
-  scrollbar-color: var(--foreground) var(--foreground-transparent);
+  scrollbar-color: var(--text-primary) rgba(197, 169, 129, 0.95);
   box-shadow: 5px 5px 10px rgba(168, 168, 168, 0.5);
 }
 
