@@ -4,15 +4,15 @@
   --text-primary: #0F0F0F;
   --text-secondary: #532E1C;
   */
-  
-  :root {
-    --background: #E6E6E6;
-    --background-transparent: #E6E6E666;
-    --foreground: #532E1C;
-    --foreground-transparent: rgba(83, 46, 28, 0.88);
-    --text-primary: #0F0F0F;
-    --text-secondary: rgb(197, 169, 129);
-    --text-light: #f0f0f0;
+
+:root {
+  --background: #e6e6e6;
+  --background-transparent: #e6e6e666;
+  --foreground: #532e1c;
+  --foreground-transparent: rgba(83, 46, 28, 0.88);
+  --text-primary: #0f0f0f;
+  --text-secondary: rgb(197, 169, 129);
+  --text-light: #f0f0f0;
 }
 
 html,
@@ -22,20 +22,50 @@ body {
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-varelaRound), Arial, Helvetica, sans-serif;
+  color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
 }
 
-.page-background {
-  --background: #0F0F0F;
-  --foreground: #E6E6E6;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bellefair);
+  color: #532e1c;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+p,
+button,
+input,
+textarea,
+select,
+option,
+label,
+span,
+a {
+  font-family: var(--font-varelaRound);
+  color: var(--text-primary);
+}
 
-  --text-primary: #0F0F0F;
-  --text-secondary: #532E1C;
+.p {
+  font-size: 1.3rem;
+  line-height: 1.5px;
+  margin-bottom: 15px;
+}
+
+.page-background {
+  --background: #0f0f0f;
+  --foreground: #e6e6e6;
+
+  --text-primary: #0f0f0f;
+  --text-secondary: #532e1c;
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
@@ -52,7 +82,7 @@ body {
 
 .page-frame {
   display: flex;
-  height: 95vh;;
+  height: 95vh;
   width: 97vw;
   flex-direction: column;
   align-items: flex-start;
@@ -70,7 +100,7 @@ body {
   justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid var(--text-secondary);
-  padding-left: 25px ;
+  padding-left: 25px;
   /* background-color: #C5A880; */
 }
 
@@ -101,8 +131,8 @@ a {
 
 button {
   cursor: pointer;
-  border: none; 
-  background-color: #532E1C;
+  border: none;
+  background-color: #532e1c;
   color: #f0f0f0;
   padding: 10px;
   margin: 10px;

@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Varela_Round, Bellefair } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const varelaRound = Varela_Round({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-varelaRound",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bellefair = Bellefair({
+  weight: "400",
   subsets: ["latin"],
-});
-
+  variable: "--font-bellefair",
+})
 export const metadata: Metadata = {
   title: "Typewriter.io",
   description: "Education and Technology",
@@ -24,7 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="he">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${varelaRound.variable} ${bellefair.variable}`}>
         <div className="page-background">
           <div className="page-frame">
 
