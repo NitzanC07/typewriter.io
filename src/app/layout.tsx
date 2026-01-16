@@ -11,7 +11,7 @@ const bellefair = Bellefair({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-bellefair",
-})
+});
 export const metadata: Metadata = {
   title: "Typewriter.io",
   description: "Education and Technology",
@@ -20,18 +20,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-
   return (
     <html lang="he">
       <body className={`${varelaRound.variable} ${bellefair.variable}`}>
         <div className="page-background">
           <div className="page-frame">
-
-
-            <main className="main">
-              {children}
-            </main>
-
+            <main className="main">{children}</main>
           </div>
         </div>
       </body>
