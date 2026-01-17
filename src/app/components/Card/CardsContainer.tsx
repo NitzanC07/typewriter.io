@@ -9,7 +9,7 @@ import CoursesList from "@/utils/CoursesList.json";
 
 interface CardContainerProps {
   handlePopup: () => void;
-  courseData: (title: string, content: string) => void;
+  courseData: (title?: string, content?: string) => void;
 }
 
 function CardsContainer({ handlePopup, courseData }: CardContainerProps) {

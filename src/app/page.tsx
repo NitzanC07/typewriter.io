@@ -25,9 +25,9 @@ export default function Home() {
     setPopupDataVisibility(!isPopupDataVisible);
   };
 
-  const courseData = (title: string, content: string) => {
-    setTitlePopup(title)
-    setContentDataPopup(content)
+  const courseData = (title?: string, content?: string) => {
+    setTitlePopup(title || "");
+    setContentDataPopup(content || "");
     handleDataPopup();    
   };
   

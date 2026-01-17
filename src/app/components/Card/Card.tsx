@@ -1,11 +1,9 @@
-import Link from "next/link";
 import styles from "./card.module.css";
 
 interface CardProps {
   titleCard?: string;
   contentCard: string;  
-  titlePopup: () => void;
-  courseData: (title: string | undefined, content: string) => void;
+  courseData: (title?: string | undefined, content?: string) => void;
   handlePopup: () => void;
 }
 
