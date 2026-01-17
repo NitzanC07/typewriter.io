@@ -1,0 +1,12 @@
+.messageBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    margin: 20px;
+    padding: 20px 10px;
+    border-radius: 7px;
+    background-color: #ff8181;
+    color: #532e1c;
+}

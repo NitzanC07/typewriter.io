@@ -4,8 +4,6 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Logo from "../images/logos/logo-ts.png";
 import Popup from "./components/Popup/Popup";
-import Link from "next/link";
-import Card from "./components/Card/Card";
 import CardsContainer from "./components/Card/CardsContainer";
 
 export default function Home() {
@@ -29,15 +27,18 @@ export default function Home() {
     handlePopup();
   };
 
-  const slideToRight = () => {
-
-  };
-
   return (
     <div className={styles.page}>
       <main className={styles.mainContainer}>
         <div className={styles.logoContainer}>
-          <Image className={styles.logo} src={Logo} alt="Typewriter.io" />
+          <div className="logoFrame">
+            <Image
+              className={styles.logo}
+              src={Logo}
+              alt="Typewriter.io"
+              width={600}
+            />
+          </div>
           <section className={styles.slogenContainer}>
             <div className={styles.s1}>
               <p className={styles.slogen}>Type the past, </p>
@@ -49,17 +50,22 @@ export default function Home() {
               <p className={styles.slogen}>Enjoy the journey.</p>
             </div>
           </section>
-          <section className={styles.content}>
-            <p>תקציר</p>
-
-            <CardsContainer />
-
-            <div>
-              <button onClick={login}>התחברות</button>
-              <button onClick={register}>הרשמה</button>
-            </div>
-          </section>
         </div>
+
+        <section className={styles.content}>
+          <p className={styles.description}>ברוכים הבאים ל-Typewriter.io אתר ללימוד עצמי בנושאים טכנולוגיים עם דגש על פיתוח חשיבה יצירתית, תוך כדי הנאה מהלמידה ומהדרך. באתר הזה תוכלו למצוא קורסים טכנולוגיים עם נגיעה רב תחומית במגוון תחומי עניין ודעת. </p>
+
+          <CardsContainer />
+
+          <div>
+            <button className="mainButton" onClick={login}>
+              התחברות
+            </button>
+            <button className="mainButton" onClick={register}>
+              הרשמה
+            </button>
+          </div>
+        </section>
       </main>
 
       {isPopupVisible && (
