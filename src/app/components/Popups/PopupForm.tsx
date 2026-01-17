@@ -1,17 +1,16 @@
 import { useState } from "react";
 import styles from "./popupForm.module.css";
 
-interface TextFields {
-  label: string;
-  name: string;
-  type: string;
-  placeholder: string;
-  requierd: boolean;
-}
 interface PopupFormProps {
   handlePopup: () => void;
   title: string;
-  textFields: TextFields[];
+  formFields: {
+    label: string;
+    name: string;
+    type: string;
+    placeholder: string;
+    requierd: boolean;
+  }[];
   submitBtn: string;
 }
 
@@ -19,21 +18,20 @@ function PopupForm({
   handlePopup,
   title,
   submitBtn,
-  textFields,
+  formFields,
 }: PopupFormProps) {
-  
   const [formData, setFormData] = useState<Record<string, string>>({});
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });    
+    setFormData({ ...formData, [name]: value });
   };
-  
+
   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // collect the data from the form
     console.log("SUBMITED: Collected data:", formData);
-    
+
     // send the data to the server
 
     // close the popup
@@ -49,7 +47,7 @@ function PopupForm({
         <h2>{title}</h2>
         <form onSubmit={submitForm}>
           <ul className={styles.form}>
-            {textFields.map((form) => (
+            {formFields.map((form) => (
               <li key={form.label} className={styles.formItem}>
                 <label className={styles.label} htmlFor={form.label}>
                   {form.label}:{" "}
@@ -67,10 +65,7 @@ function PopupForm({
               </li>
             ))}
           </ul>
-          <button
-            className={`mainButton ${styles.submitBtn}`}
-            type="submit"
-          >
+          <button className={`mainButton ${styles.submitBtn}`} type="submit">
             {submitBtn}
           </button>
         </form>

@@ -16,7 +16,7 @@ export default function Home() {
   const [titlePopup, setTitlePopup] = useState("");
   const [contentDataPopup, setContentDataPopup] = useState("");
   const [contentFormPopup, setContentFormPopup] = useState(() => [
-    { label: "", type: "", placeholder: "" },
+    { label: "", type: "", placeholder: "", requierd: false, name: "" },
   ]);
   
 
@@ -103,7 +103,7 @@ export default function Home() {
         <PopupForm
           handlePopup={handleFormPopup}
           title={titlePopup}
-          textFields={contentFormPopup}
+          formFields={contentFormPopup}
           submitBtn={submitBtn}
         />
       )}
