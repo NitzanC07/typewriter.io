@@ -1,0 +1,22 @@
+[
+  {
+    "label": "שם פרטי",
+    "type": "text",
+    "placeholder": "שם פרטי"
+  },
+  {
+    "label": "שם משפחה",
+    "type": "text",
+    "placeholder": "שם משפחה"
+  },
+  {
+    "label": "דואר אלקטרוני",
+    "type": "email",
+    "placeholder": "דואר אלקטרוני"
+  },
+  {
+    "label": "סיסמא",
+    "type": "password",
+    "placeholder": "סיסמא"
+  }
+]

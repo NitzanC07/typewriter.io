@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 import { useEffect, useState } from "react";
 
 
-type CardProps = {
+interface CardProps {
     title?: number;
     content?: string;
     link?: string;

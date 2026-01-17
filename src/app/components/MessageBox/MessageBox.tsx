@@ -1,6 +1,6 @@
 import styles from "./messageBox.module.css";
 
-type MessageBoxProps = {
+interface MessageBoxProps {
     text: string
 }
 

@@ -3,27 +3,34 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Logo from "../images/logos/logo-ts.png";
-import Popup from "./components/Popup/Popup";
+import PopupForm from "./components/Popup/PopupForm";
 import CardsContainer from "./components/Card/CardsContainer";
+import loginFormContent from "@/utils/loginFormData.json";
+import registerFormContent from "@/utils/registerFormData.json";
 
 export default function Home() {
   const [isPopupVisible, setPopupVisibility] = useState(false);
+  const [submitBtn, setSubmitBtn] = useState("");
   const [titlePopup, setTitlePopup] = useState("");
-  const [contentPopup, setContentPopup] = useState("");
-
+  const [contentPopup, setContentPopup] = useState(() => [
+    {label: "", type: "", placeholder: "" },
+  ]);
+  
   const handlePopup = () => {
     setPopupVisibility(!isPopupVisible);
   };
 
   const login = () => {
     setTitlePopup("התחברות");
-    setContentPopup("התחברות");
+    setSubmitBtn("התחבר");
+    setContentPopup(loginFormContent);
     handlePopup();
   };
 
   const register = () => {
     setTitlePopup("הרשמה");
-    setContentPopup("הרשמה");
+    setSubmitBtn("הרשם");
+    setContentPopup(registerFormContent);
     handlePopup();
   };
 
@@ -53,7 +60,12 @@ export default function Home() {
         </div>
 
         <section className={styles.content}>
-          <p className={styles.description}>ברוכים הבאים ל-Typewriter.io אתר ללימוד עצמי בנושאים טכנולוגיים עם דגש על פיתוח חשיבה יצירתית, תוך כדי הנאה מהלמידה ומהדרך. באתר הזה תוכלו למצוא קורסים טכנולוגיים עם נגיעה רב תחומית במגוון תחומי עניין ודעת. </p>
+          <p className={styles.description}>
+            ברוכים הבאים ל-Typewriter.io אתר ללימוד עצמי בנושאים טכנולוגיים עם
+            דגש על פיתוח חשיבה יצירתית, תוך כדי הנאה מהלמידה ומהדרך. באתר הזה
+            תוכלו למצוא קורסים טכנולוגיים עם נגיעה רב תחומית במגוון תחומי עניין
+            ודעת.{" "}
+          </p>
 
           <CardsContainer />
 
@@ -69,10 +81,11 @@ export default function Home() {
       </main>
 
       {isPopupVisible && (
-        <Popup
+        <PopupForm
           handlePopup={handlePopup}
           title={titlePopup}
-          content={contentPopup}
+          textFields={contentPopup}
+          submitBtn={submitBtn}
         />
       )}
     </div>

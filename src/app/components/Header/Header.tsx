@@ -3,7 +3,7 @@ import styles from "./header.module.css";
 import Image from "next/image";
 import Logo from "@/images/logos/logo-ts.png";
 
-type HeaderProps = {
+interface HeaderProps {
   setSidebarVisibility: React.Dispatch<React.SetStateAction<boolean>>;
   isSidebarVisibility: boolean;
 };
