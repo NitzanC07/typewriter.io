@@ -1,9 +1,14 @@
 import styles from "./popup.module.css";
 
+interface TextFields {
+  label: string;
+  type: string;
+  placeholder: string;
+}
 interface PopupFormProps {
   handlePopup: () => void;
   title: string;
-  textFields: any;
+  textFields: TextFields[];
   submitBtn: string;
 }
 
