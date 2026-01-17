@@ -79,8 +79,14 @@ function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
         </div>
       ) : (
         <div className="cardsContainer">
-          {[...Array(totalCards)].map((_, index) => (
-            <Card key={index} title={index} />
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              titleCard={card.title}
+              contentCard={card.description}
+              courseData={courseData}
+              handlePopup={handlePopup}
+            />
           ))}
         </div>
       )}
