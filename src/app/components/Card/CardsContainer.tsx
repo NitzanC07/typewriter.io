@@ -5,10 +5,18 @@ import styles from "./card.module.css";
 import RightArrow from "@/images/icons/arrow_right.svg";
 import LeftArrow from "@/images/icons/arrow_left.svg";
 import Image from "next/image";
+import CoursesList from "@/utils/CoursesList.json";
 
-function CardsContainer() {
+interface CardContainerProps {
+  handlePopup: () => void;
+  courseData: (title: string, content: string) => void;
+}
+
+function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
+  const cards = CoursesList;
+
   const [widthScreen, setWidthScreen] = useState(0);
-  const totalCards = 4;
+  const totalCards = cards.length;
   const CARD_WIDTH = 200;
   const GAP = 20;
   const STEP = CARD_WIDTH + GAP;
@@ -48,8 +56,14 @@ function CardsContainer() {
                 transform: `translateX(${index * STEP}px)`,
               }}
             >
-              {[...Array(totalCards)].map((_, index) => (
-                <Card key={index} title={index} />
+              {cards.map((card, index) => (
+                <Card
+                  key={index}
+                  titleCard={card.title}
+                  contentCard={card.description}
+                  courseData={courseData}
+                  handlePopup={handlePopup}
+                />
               ))}
             </div>
           </div>

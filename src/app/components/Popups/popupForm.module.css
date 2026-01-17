@@ -1,0 +1,121 @@
+@keyframes slideInPaper {
+    0% {
+        transform: translateY(100%) scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #F9F4E1 ;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(83, 46, 28, 0.09) 0px, transparent 2px),
+        radial-gradient(circle, #f9f4e1 60%, #c5a880 140%);
+    color: #532e1c;
+    width: 400px;
+    padding: 40px;
+    border: 1px solid #0F0F0F;
+    border-radius: 3px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    inset: 0 0 100px rgba(255, 255, 255, 0.2);
+    animation: slideInPaper 1.5s ease-in-out;
+}
+
+.closeBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    padding: 0;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #532e1c;
+    box-shadow: none;
+}
+.closeBtn:hover {
+    background-color: transparent;
+    color: #c5a880;
+    box-shadow: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.formItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 15px 0;
+    padding: 0;
+    list-style: none;
+}
+.label {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.input {
+    width: 60%;
+    padding: 2px;
+    border: 0;
+    border-bottom: 2px solid #0F0F0F;
+    background-color: transparent;
+    /* background-color: #F9F4E1 ; */
+    color: #532e1c;
+    font-size: 1rem;
+    font-weight: 400;
+    box-shadow: none;
+    transition: all 0.7s ease-in-out;
+}
+.input:focus {
+    outline: none;
+    border-bottom: 2px solid #c5a880;
+}
+.submitBtn {
+    font-weight: 600;
+    margin: 45px 80% 0 0;    
+}
+
+
+@media screen and (max-width: 768px) {
+    .content {
+        width: 90%;
+        padding: 20px;
+    }
+    .closeBtn {
+        font-size: 18px;
+    }
+}   

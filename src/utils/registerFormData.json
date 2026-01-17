@@ -1,22 +1,30 @@
 [
   {
     "label": "שם פרטי",
+    "name": "firstName",
     "type": "text",
-    "placeholder": "שם פרטי"
+    "placeholder": "שם פרטי",
+    "requierd": true
   },
   {
     "label": "שם משפחה",
+    "name": "lastName",
     "type": "text",
-    "placeholder": "שם משפחה"
+    "placeholder": "שם משפחה",
+    "requierd": true
   },
   {
     "label": "דואר אלקטרוני",
+    "name": "email",
     "type": "email",
-    "placeholder": "דואר אלקטרוני"
+    "placeholder": "דואר אלקטרוני",
+    "requierd": true
   },
   {
     "label": "סיסמא",
+    "name": "password",
     "type": "password",
-    "placeholder": "סיסמא"
+    "placeholder": "סיסמא",
+    "requierd": true
   }
 ]

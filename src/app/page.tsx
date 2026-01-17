@@ -3,35 +3,51 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Logo from "../images/logos/logo-ts.png";
-import PopupForm from "./components/Popup/PopupForm";
+import PopupForm from "./components/Popups/PopupForm";
 import CardsContainer from "./components/Card/CardsContainer";
 import loginFormContent from "@/utils/loginFormData.json";
 import registerFormContent from "@/utils/registerFormData.json";
+import PopupData from "./components/Popups/PopupData";
 
 export default function Home() {
-  const [isPopupVisible, setPopupVisibility] = useState(false);
+  const [isPopupFormVisible, setPopupFormVisibility] = useState(false);
+  const [isPopupDataVisible, setPopupDataVisibility] = useState(false);
   const [submitBtn, setSubmitBtn] = useState("");
   const [titlePopup, setTitlePopup] = useState("");
-  const [contentPopup, setContentPopup] = useState(() => [
-    {label: "", type: "", placeholder: "" },
+  const [contentDataPopup, setContentDataPopup] = useState("");
+  const [contentFormPopup, setContentFormPopup] = useState(() => [
+    { label: "", type: "", placeholder: "" },
   ]);
   
-  const handlePopup = () => {
-    setPopupVisibility(!isPopupVisible);
+
+  
+  const handleDataPopup = () => {
+    setPopupDataVisibility(!isPopupDataVisible);
+  };
+
+  const courseData = (title: string, content: string) => {
+    setTitlePopup(title)
+    setContentDataPopup(content)
+    handleDataPopup();    
+  };
+  
+
+  const handleFormPopup = () => {
+    setPopupFormVisibility(!isPopupFormVisible);
   };
 
   const login = () => {
     setTitlePopup("התחברות");
     setSubmitBtn("התחבר");
-    setContentPopup(loginFormContent);
-    handlePopup();
+    setContentFormPopup(loginFormContent);
+    handleFormPopup();
   };
 
   const register = () => {
     setTitlePopup("הרשמה");
     setSubmitBtn("הרשם");
-    setContentPopup(registerFormContent);
-    handlePopup();
+    setContentFormPopup(registerFormContent);
+    handleFormPopup();
   };
 
   return (
@@ -67,7 +83,10 @@ export default function Home() {
             ודעת.{" "}
           </p>
 
-          <CardsContainer />
+          <CardsContainer
+            handlePopup={handleDataPopup}
+            courseData={courseData}
+          />
 
           <div>
             <button className="mainButton" onClick={login}>
@@ -80,13 +99,16 @@ export default function Home() {
         </section>
       </main>
 
-      {isPopupVisible && (
+      {isPopupFormVisible && (
         <PopupForm
-          handlePopup={handlePopup}
+          handlePopup={handleFormPopup}
           title={titlePopup}
-          textFields={contentPopup}
+          textFields={contentFormPopup}
           submitBtn={submitBtn}
         />
+      )}
+      {isPopupDataVisible && (
+        <PopupData handlePopup={handleDataPopup} title={titlePopup} content={contentDataPopup} />
       )}
     </div>
   );

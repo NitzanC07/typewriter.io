@@ -1,12 +1,16 @@
 [
   {
     "label": "דואר אלקטרוני",
+    "name": "email",
     "type": "email",
-    "placeholder": "דואר אלקטרוני"
+    "placeholder": "דואר אלקטרוני",
+    "requierd": true
   },
   {
     "label": "סיסמא",
+    "name": "password",
     "type": "password",
-    "placeholder": "סיסמא"
+    "placeholder": "סיסמא",
+    "requierd": true
   }
 ]
