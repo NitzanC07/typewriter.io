@@ -5,7 +5,7 @@ interface CardProps {
   titleCard?: string;
   contentCard: string;  
   titlePopup: () => void;
-  courseData: (title: string, content: string) => void;
+  courseData: (title: string | undefined, content: string) => void;
   handlePopup: () => void;
 }
 
