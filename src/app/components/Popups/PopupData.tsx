@@ -21,6 +21,7 @@ function PopupData({
         <button className={styles.closeBtn} onClick={handlePopup}>
           X
         </button>
+        <div className={styles.imageContainer}></div>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{content}</p>
         <Link className="secodaryButton" href="/course">להתחיל ללמוד</Link>

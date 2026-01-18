@@ -60,6 +60,12 @@
     color: #c5a880;
     box-shadow: none;
 }
+.imageContainer {
+width: 100%;
+height: 200px;
+background-color: #8889;
+margin: 0 auto;
+}
 
 .description {
     display: flex;
