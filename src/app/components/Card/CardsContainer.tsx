@@ -9,7 +9,7 @@ import CoursesList from "@/utils/CoursesList.json";
 
 interface CardContainerProps {
   handlePopup: () => void;
-  courseData: (title?: string, content?: string) => void;
+  courseData: (title?: string, content?: string, activate?: boolean) => void;
 }
 
 function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
@@ -25,11 +25,11 @@ function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
   const [index, setIndex] = useState(0);
 
   const slideToRight = () => {
-    setIndex((prev) => Math.min(prev + 1, totalCards / 2 - 1));
+    setIndex((prev) => Math.max(prev - 1, -totalCards / 2 + 1));
   };
 
   const slideToLeft = () => {
-    setIndex((prev) => Math.max(prev - 1, -totalCards / 2 + 1));
+    setIndex((prev) => Math.min(prev + 1, totalCards / 2 - 1));
   };
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
                   titleCard={card.title}
                   contentCard={card.description}
                   courseData={courseData}
-                  handlePopup={handlePopup}
+                  activate={card.activate}
                 />
               ))}
             </div>
@@ -85,7 +85,7 @@ function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
               titleCard={card.title}
               contentCard={card.description}
               courseData={courseData}
-              handlePopup={handlePopup}
+              activate={card.activate}
             />
           ))}
         </div>

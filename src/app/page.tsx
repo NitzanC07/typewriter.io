@@ -15,22 +15,21 @@ export default function Home() {
   const [submitBtn, setSubmitBtn] = useState("");
   const [titlePopup, setTitlePopup] = useState("");
   const [contentDataPopup, setContentDataPopup] = useState("");
+  const [activateCourse, setActivateCourse] = useState(false);
   const [contentFormPopup, setContentFormPopup] = useState(() => [
     { label: "", type: "", placeholder: "", requierd: false, name: "" },
   ]);
-  
 
-  
   const handleDataPopup = () => {
     setPopupDataVisibility(!isPopupDataVisible);
   };
 
-  const courseData = (title?: string, content?: string) => {
+  const courseData = (title?: string, content?: string, activate?: boolean) => {
     setTitlePopup(title || "");
     setContentDataPopup(content || "");
-    handleDataPopup();    
+    setActivateCourse(activate || false);
+    handleDataPopup();
   };
-  
 
   const handleFormPopup = () => {
     setPopupFormVisibility(!isPopupFormVisible);
@@ -108,7 +107,12 @@ export default function Home() {
         />
       )}
       {isPopupDataVisible && (
-        <PopupData handlePopup={handleDataPopup} title={titlePopup} content={contentDataPopup} />
+        <PopupData
+          handlePopup={handleDataPopup}
+          title={titlePopup}
+          content={contentDataPopup}
+          activate={activateCourse}
+        />
       )}
     </div>
   );

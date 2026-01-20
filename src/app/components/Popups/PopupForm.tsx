@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./popupForm.module.css";
+import closeIcon from "@/images/icons/closeButton.svg";
+import Image from "next/image";
 
 interface PopupFormProps {
   handlePopup: () => void;
@@ -42,7 +44,7 @@ function PopupForm({
     <section className={styles.container}>
       <section className={styles.content}>
         <button className={styles.closeBtn} onClick={handlePopup}>
-          X
+          <Image src={closeIcon} alt="close" width={30} />
         </button>
         <h2>{title}</h2>
         <form onSubmit={submitForm}>
