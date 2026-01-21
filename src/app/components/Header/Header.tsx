@@ -2,6 +2,7 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import Logo from "@/images/logos/logo-ts.png";
+import menuIcon from "@/images/icons/menuIcon.svg";
 
 interface HeaderProps {
   setSidebarVisibility: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,7 +20,7 @@ function Header({ setSidebarVisibility, isSidebarVisibility }: HeaderProps) {
           className={styles.menuButton}
           onClick={() => setSidebarVisibility(!isSidebarVisibility)}
         >
-          M
+          <Image src={menuIcon} alt="menu icon" width={25} className={styles.menuIcon} />
         </button>
       </div>
     </header>

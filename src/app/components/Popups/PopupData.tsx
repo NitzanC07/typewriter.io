@@ -1,6 +1,6 @@
 import styles from "./popupData.module.css";
 import Link from "next/link";
-import closeIcon from "@/images/icons/closeButton.svg";
+import closeIcon from "@/images/icons/closeButton_white.svg";
 import Image from "next/image";
 
 interface PopupDataProps {
@@ -15,7 +15,7 @@ function PopupData({ handlePopup, title, content, activate }: PopupDataProps) {
     <section className={styles.container}>
       <section className={styles.content}>
         <button className={styles.closeBtn} onClick={handlePopup}>
-          <Image src={closeIcon} alt="close" width={30} />
+          <Image src={closeIcon} alt="close" width={40} />
         </button>
         <div className={styles.imageContainer}></div>
         <h2 className={styles.title}>{title}</h2>

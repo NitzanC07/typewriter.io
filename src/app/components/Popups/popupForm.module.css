@@ -51,8 +51,6 @@
     margin: 5px;
     background-color: transparent;
     border: none;
-    font-size: 24px;
-    color: #532e1c;
     box-shadow: none;
 }
 .closeBtn:hover {
@@ -107,6 +105,12 @@
 .submitBtn {
     font-weight: 600;
     margin: 45px 80% 0 0;    
+}
+.text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 20px;
+    padding: 0;
 }
 
 

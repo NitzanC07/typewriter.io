@@ -71,6 +71,11 @@ function PopupForm({
             {submitBtn}
           </button>
         </form>
+        {title === "התחברות" ? (
+          <p className={styles.text}>אין לך עדיין חשבון? לחץ על הרשמה.</p>
+        ) : (
+          <p className={styles.text}>כבר יש לך חשבון? לחץ על התחברות.</p>
+        )}
       </section>
     </section>
   );

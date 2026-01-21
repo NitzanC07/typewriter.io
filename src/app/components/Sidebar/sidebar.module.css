@@ -60,7 +60,11 @@
 @media (max-width: 480px) {
   .container {
     width: 100%;
-    top: 12%;
-    animation: 1s ease-in-out 1 alternate slideInLeft;
+    left: 0;
+    right: 0;
+    top: 13%;
+    height: 70%;
+    border-radius: 0px;
+    animation: none;
   }
 }

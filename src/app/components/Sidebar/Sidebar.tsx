@@ -8,7 +8,7 @@ type SidebarProps = {
 function Sidebar({isVisibility}: SidebarProps) {
   const count = 100;
   return (
-    <section className={`${styles.container} ${!isVisibility ? "exit" : ""}`}>
+    <section className={`${styles.container}`}>
       <Link href="/">חזרה לדף הבית</Link>
       <h3>תוכן עניינים</h3>
       <ul>
