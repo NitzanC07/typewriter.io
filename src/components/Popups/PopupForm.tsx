@@ -14,6 +14,7 @@ interface PopupFormProps {
     requierd: boolean;
   }[];
   submitBtn: string;
+  closePopup: () => void;
 }
 
 function PopupForm({
@@ -21,6 +22,7 @@ function PopupForm({
   title,
   submitBtn,
   formFields,
+  closePopup,
 }: PopupFormProps) {
   const [formData, setFormData] = useState<Record<string, string>>({});
 
@@ -43,7 +45,7 @@ function PopupForm({
   return (
     <section className={styles.container}>
       <section className={styles.content}>
-        <button className={styles.closeBtn} onClick={handlePopup}>
+        <button className={styles.closeBtn} onClick={closePopup}>
           <Image src={closeIcon} alt="close" width={30} />
         </button>
         <h2>{title}</h2>

@@ -1,9 +1,9 @@
 {
     "courseTitle": 
     {
-        "id": 2,
+        "id": "2",
         "courseName": "מסע לעבר האתר",
-        "description": ""
+        "description": "תיאור הקורס"
     },
     "courseContent":
     [

@@ -6,13 +6,13 @@ import RightArrow from "@/images/icons/arrow_right.svg";
 import LeftArrow from "@/images/icons/arrow_left.svg";
 import Image from "next/image";
 import CoursesList from "@/utils/CoursesList.json";
+import CourseInfo from "@/types/courseInfo";
 
 interface CardContainerProps {
-  handlePopup: () => void;
-  courseData: (title?: string, content?: string, activate?: boolean) => void;
+  handlePopup: (courseInfo: CourseInfo) => void;
 }
 
-function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
+function CardsContainer({ handlePopup }: CardContainerProps) {
   const cards = CoursesList;
 
   const [widthScreen, setWidthScreen] = useState(0);
@@ -59,10 +59,8 @@ function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
               {cards.map((card, index) => (
                 <Card
                   key={index}
-                  titleCard={card.title}
-                  contentCard={card.description}
-                  courseData={courseData}
-                  activate={card.activate}
+                  handlePopup={handlePopup}
+                  courseInfo={card}
                 />
               ))}
             </div>
@@ -82,10 +80,8 @@ function CardsContainer({ handlePopup, courseData }: CardContainerProps) {
           {cards.map((card, index) => (
             <Card
               key={index}
-              titleCard={card.title}
-              contentCard={card.description}
-              courseData={courseData}
-              activate={card.activate}
+              handlePopup={handlePopup}
+              courseInfo={card}              
             />
           ))}
         </div>

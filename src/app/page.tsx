@@ -3,32 +3,37 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Logo from "../images/logos/logo-ts.png";
-import PopupForm from "./components/Popups/PopupForm";
-import CardsContainer from "./components/Card/CardsContainer";
+import PopupForm from "@/components/Popups/PopupForm";
+import CardsContainer from "@/components/Card/CardsContainer";
 import loginFormContent from "@/utils/loginFormData.json";
 import registerFormContent from "@/utils/registerFormData.json";
-import PopupData from "./components/Popups/PopupData";
+import CourseInfo from "@/types/courseInfo";
+import PopupInfo from "@/components/Popups/PopupInfo";
 
 export default function Home() {
   const [isPopupFormVisible, setPopupFormVisibility] = useState(false);
-  const [isPopupDataVisible, setPopupDataVisibility] = useState(false);
+  const [isPopupInfoVisible, setPopupInfoVisibility] = useState(false);
   const [submitBtn, setSubmitBtn] = useState("");
   const [titlePopup, setTitlePopup] = useState("");
-  const [contentDataPopup, setContentDataPopup] = useState("");
-  const [activateCourse, setActivateCourse] = useState(false);
+  const [courseInfoPopup, setCourseInfoPopup] = useState({
+    title: "",
+    description: "",
+    id: "",
+    activate: false,
+  });
   const [contentFormPopup, setContentFormPopup] = useState(() => [
     { label: "", type: "", placeholder: "", requierd: false, name: "" },
   ]);
 
-  const handleDataPopup = () => {
-    setPopupDataVisibility(!isPopupDataVisible);
-  };
-
-  const courseData = (title?: string, content?: string, activate?: boolean) => {
-    setTitlePopup(title || "");
-    setContentDataPopup(content || "");
-    setActivateCourse(activate || false);
-    handleDataPopup();
+  const handleInfoPopup = (courseInfo: CourseInfo) => {
+    setCourseInfoPopup({
+      ...courseInfo,
+      id: courseInfo.id.toString(),
+      description: courseInfo.description,
+      title: courseInfo.title,
+      activate: courseInfo.activate,
+    });
+    setPopupInfoVisibility(true);
   };
 
   const handleFormPopup = () => {
@@ -39,14 +44,19 @@ export default function Home() {
     setTitlePopup("התחברות");
     setSubmitBtn("התחבר");
     setContentFormPopup(loginFormContent);
-    handleFormPopup();
+    setPopupFormVisibility(true);
   };
-
+  
   const register = () => {
     setTitlePopup("הרשמה");
     setSubmitBtn("הרשם");
     setContentFormPopup(registerFormContent);
-    handleFormPopup();
+    setPopupFormVisibility(true);
+  };
+
+  const closePopup = () => {
+    setPopupFormVisibility(false);
+    setPopupInfoVisibility(false);
   };
 
   return (
@@ -83,8 +93,7 @@ export default function Home() {
           </p>
 
           <CardsContainer
-            handlePopup={handleDataPopup}
-            courseData={courseData}
+            handlePopup={handleInfoPopup}
           />
 
           <div>
@@ -104,14 +113,13 @@ export default function Home() {
           title={titlePopup}
           formFields={contentFormPopup}
           submitBtn={submitBtn}
+          closePopup={closePopup}
         />
       )}
-      {isPopupDataVisible && (
-        <PopupData
-          handlePopup={handleDataPopup}
-          title={titlePopup}
-          content={contentDataPopup}
-          activate={activateCourse}
+      {isPopupInfoVisible && (
+        <PopupInfo
+        courseInfo={courseInfoPopup}
+        closePopup={closePopup}
         />
       )}
     </div>
