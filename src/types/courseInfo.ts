@@ -1,6 +1,7 @@
 export default interface CourseInfo {
+  id: string | number;
+  courseCode: string;
   title: string;
   description: string;
-  id: string | number;
   activate: boolean;
 }

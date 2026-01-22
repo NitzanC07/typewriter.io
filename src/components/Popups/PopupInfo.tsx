@@ -4,12 +4,12 @@ import closeIcon from "@/images/icons/closeButton_white.svg";
 import Image from "next/image";
 import CourseInfo from "@/types/courseInfo";
 
-interface PopupDataProps {
+interface PopupInfoProps {
   courseInfo: CourseInfo;
   closePopup: () => void;
 }
 
-function PopupInfo({ courseInfo, closePopup }: PopupDataProps) {
+function PopupInfo({ courseInfo, closePopup }: PopupInfoProps) {
 
   console.log(courseInfo);
   
@@ -24,7 +24,7 @@ function PopupInfo({ courseInfo, closePopup }: PopupDataProps) {
         <h2 className={styles.title}>{courseInfo.title}</h2>
         <p className={styles.description}>{courseInfo.description}</p>
         <div className={styles.linksBox}>
-          <Link href={`/${courseInfo.id}`}>
+          <Link href={`/${courseInfo.courseCode}`}>
             <button
               className={`secodaryButton ${courseInfo.activate ? "" : "secodaryButtonDisabled"}`}
               disabled={!courseInfo.activate}

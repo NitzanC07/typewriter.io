@@ -16,9 +16,10 @@ export default function Home() {
   const [submitBtn, setSubmitBtn] = useState("");
   const [titlePopup, setTitlePopup] = useState("");
   const [courseInfoPopup, setCourseInfoPopup] = useState({
-    title: "",
-    description: "",
     id: "",
+    title: "",
+    courseCode: "",
+    description: "",
     activate: false,
   });
   const [contentFormPopup, setContentFormPopup] = useState(() => [
@@ -32,6 +33,7 @@ export default function Home() {
       description: courseInfo.description,
       title: courseInfo.title,
       activate: courseInfo.activate,
+      courseCode: courseInfo.courseCode,
     });
     setPopupInfoVisibility(true);
   };
