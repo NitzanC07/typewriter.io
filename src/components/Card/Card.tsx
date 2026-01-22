@@ -3,7 +3,6 @@ import CourseInfo from "@/types/courseInfo";
 
 interface CardProps {
   handlePopup: (courseInfo: CourseInfo) => void;
-  selectedCourseInfo: () => void;
   courseInfo: CourseInfo;
 }
 
