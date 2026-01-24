@@ -1,5 +1,5 @@
 export interface Lesson {
-  lessonId: string;
+  lessonId: number;
   courseTitle: string;
   sections: {
     sectionTitle?: string;
@@ -47,7 +47,8 @@ export interface CourseContent {
 }
 export interface ModuleCourse {
   courseId: string;
-  courseName: string;
+  courseCode: string;
+  courseTitle: string;
   courseDescription: string;
   coverImage: {
     path: string;

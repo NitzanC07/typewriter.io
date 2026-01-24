@@ -7,14 +7,16 @@ import menuIcon from "@/images/icons/menuIcon.svg";
 interface HeaderProps {
   setSidebarVisibility: React.Dispatch<React.SetStateAction<boolean>>;
   isSidebarVisibility: boolean;
+  courseTitle: string;
 };
 
-function Header({ setSidebarVisibility, isSidebarVisibility }: HeaderProps) {
+function Header({ setSidebarVisibility, isSidebarVisibility, courseTitle }: HeaderProps) {
   return (
     <header className="page-header">
-      <h1 className={styles.logo}>
+      <div className={styles.logoContainer}>
         <Image src={Logo} alt="Typewriter.io" width={210} />
-      </h1>
+        <h1 className={styles.courseTitle}>{courseTitle}</h1>
+      </div>
       <div className={styles.user}>
         <button
           className={styles.menuButton}

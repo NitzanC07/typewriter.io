@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "courseCode": "course-python",
+    "courseCode": "course-python-algorithm",
     "title": "אלגוריתנ\"ך",
     "description": "בקורס נלמד אלגוריתמים בעזרת שפת התכנות Python בעזרת תרגולים בהשראת סיפורי התנ\"ך.",
     "activate": true

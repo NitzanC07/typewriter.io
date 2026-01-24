@@ -3,19 +3,19 @@ import styles from "./layoutCourse.module.css";
 import { useState } from "react";
 import Header from "@/components/Header/Header";
 import Sidebar from "@/components/Sidebar/Sidebar";
+import courseData from "@/data/course-web-development.json";
 
-export default function RootLayout({
+export default function CourseLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-
-
-
   const [isSidebarVisibility, setSidebarVisibility] = useState(false);
+
   return (
     <div className="page-frame">
       <Header
         setSidebarVisibility={setSidebarVisibility}
         isSidebarVisibility={isSidebarVisibility}
+        courseTitle={courseData.courseTitle}
       />
 
       <main className="main">{children}</main>

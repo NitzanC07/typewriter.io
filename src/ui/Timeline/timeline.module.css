@@ -1,0 +1,68 @@
+@keyframes slide {
+  0% {
+    transform: translateX(-250px);
+}
+100% {
+    transform: translateX(250px);
+}
+}
+
+.timelineContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding-top: 60; /* מרווח עליון לטקסט */
+  margin: 0 auto;
+  background-color: #e6e6e6; /* צבע רקע מודרני */
+}
+
+.timeline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #532e1c;
+  z-index: 1;
+}
+/* נקודות הציון (התחנות) */
+.timelinePoints {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  transform: translateY(-7px);
+}
+
+/* העיגולים על הציר */
+.checkpoint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  text-align: center;
+  background-color: rgba(100, 0, 0, 0.8);
+}
+
+.dot1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #C5A880; /* בז' וינטג' מהמקורות */
+  border: 3px solid #532E1C;
+  transition: transform 1s ease;
+}
+.dot2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #c58080; /* בז' וינטג' מהמקורות */
+  border: 3px solid #532E1C;
+  animation: slide 180s linear infinite alternate;
+  
+}
+.dot:hover {
+  transform: scale(1.5);
+}
