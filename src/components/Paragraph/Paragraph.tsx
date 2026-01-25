@@ -1,7 +1,7 @@
 import styles from "./paragraph.module.css";
 
 interface ParagraphProps {
-    text: string;
+    text: string[];
 }
 
 function Paragraph({text}: ParagraphProps) {

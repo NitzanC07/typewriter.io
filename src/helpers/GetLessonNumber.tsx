@@ -1,10 +1,9 @@
 let ModuleNumber = 0;
 let LessonNumber = 0;
 
-const saveLessonNumer = (moduleNumber: number, lessonNumber: number) => {
+const saveLessonNumber = (moduleNumber: number, lessonNumber: number) => {
     ModuleNumber = moduleNumber;
     LessonNumber = lessonNumber;
-    console.log([ModuleNumber, LessonNumber]);  
 };
 
 const getLessonNumber = () => {
@@ -13,7 +12,7 @@ const getLessonNumber = () => {
 
 const lessonHelper = {
     getLessonNumber,
-    saveLessonNumer,
+    saveLessonNumber,
 };
 
 export default lessonHelper;

@@ -1,7 +1,4 @@
-export interface Lesson {
-  lessonId: number;
-  courseTitle: string;
-  sections: {
+export interface Section {
     sectionTitle?: string;
     textBlock?: string[];
     listBlock?: string[];
@@ -38,7 +35,12 @@ export interface Lesson {
       explainAnswer: string;
     }[];
     decorativeLine?: boolean;
-  }[];
+  }
+
+export interface Lesson {
+  lessonId: number;
+  courseTitle: string;
+  sections: Section[];
 }
 export interface CourseContent {
   module: string;
