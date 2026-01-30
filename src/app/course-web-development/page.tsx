@@ -6,6 +6,8 @@ import Timeline from "@/ui/Timeline/Timeline";
 import Paragraph from "@/components/Paragraph/Paragraph";
 import { useState } from "react";
 import PopupTableOfContents from "@/components/Popups/PopupTableOfContents";
+import TitleText from "@/components/TitleText/TitleText";
+import MainButton from "@/ui/MainButton/MainLink";
 
 export default function CoursePage() {
   const [isPopupTableOfContentsVisibility, setPopupTableOfContentsVisibility] =
@@ -40,20 +42,25 @@ export default function CoursePage() {
       >
         תוכן עניינים
       </button>
+
       <section className={styles.main}>
-        <h2>{currentModule?.title}</h2>
+        <h2 className={styles.chapterTitle}>{currentModule?.title}</h2>
+
+        <Timeline />
 
         {currentLesson?.sections?.map((section: Section, index: number) => (
           <div key={index}>
-            {section.sectionTitle && <h3>{section.sectionTitle}</h3>}
+            {section.sectionTitle && <TitleText title={section.sectionTitle} />}
 
             {section.textBlock && (
               <Paragraph key={index} text={section.textBlock} />
             )}
+            {section.bigButton && (
+              <MainButton text={section.bigButton.text} urlLink={section.bigButton.urlLink} />
+            )}
           </div>
         ))}
 
-        <Timeline />
         {isPopupTableOfContentsVisibility && (
           <PopupTableOfContents
             isVisibility={isPopupTableOfContentsVisibility}

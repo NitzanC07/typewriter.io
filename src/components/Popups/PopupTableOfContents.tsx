@@ -1,10 +1,7 @@
-import Link from "next/link";
 import styles from "./popupTableOfContents.module.css";
-import lessonHelper from "@/helpers/GetLessonNumber";
 import courseData from "@/data/course-web-development.json";
 import Image from "next/image";
 import closeIcon from "@/images/icons/closeButton_white.svg";
-import { updateTag } from "next/cache";
 
 type PopupTableOfContentsProps = {
   isVisibility: boolean;
@@ -17,6 +14,7 @@ function PopupTableOfContents({
   closePopup,
   updateLessonNumber,
 }: PopupTableOfContentsProps) {
+  
   const courseContent = courseData.courseContent;
 
   return (

@@ -5,8 +5,14 @@ interface ParagraphProps {
 }
 
 function Paragraph({text}: ParagraphProps) {
+  console.log(text);
+  
   return (
-    <p className={styles.paragraph}>{text}</p>
+    <div className={styles.paragraphContainer}>
+      {text.map((para, index) => (
+        <p key={index} className={styles.paragraph}>{para}</p>
+      ))}
+    </div>
   )
 }
 

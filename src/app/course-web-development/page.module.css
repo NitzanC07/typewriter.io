@@ -1,25 +1,36 @@
 .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 99%;
+  padding: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: 4px;
+  scrollbar-color: var(--text-secondary) var(--foreground);
 }
+
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .tocButton {
-    position: absolute;
-    right: 0;
-    top: 0;
-    
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chapterTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
 }

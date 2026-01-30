@@ -11,9 +11,9 @@
   position: relative;
   width: 100%;
   max-width: 600px;
-  padding-top: 60; /* מרווח עליון לטקסט */
-  margin: 0 auto;
-  background-color: #e6e6e6; /* צבע רקע מודרני */
+  padding-top: 0px; /* מרווח עליון לטקסט */
+  margin: 30px auto 40px;
+  background-color: #e6e6e6;
 }
 
 .timeline {
@@ -62,7 +62,4 @@
   border: 3px solid #532E1C;
   animation: slide 180s linear infinite alternate;
   
-}
-.dot:hover {
-  transform: scale(1.5);
 }
