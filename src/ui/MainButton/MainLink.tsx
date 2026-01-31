@@ -8,13 +8,12 @@ interface MainLinkProps {
 
 function MainLink({ text, urlLink }: MainLinkProps) {
   return (
-    <Link 
-      className={styles.mainLink}
-      href={urlLink} 
-      target="_blank" 
-    >
-      <button className="mainButton">{text}</button>
-    </Link>
+    <div className={styles.linkContainer}>
+      <Link className={styles.mainLink} href={urlLink} target="_blank">
+        {/* <button className="mainButton">{text}</button> */}
+        {text}
+      </Link>
+    </div>
   );
 }
 

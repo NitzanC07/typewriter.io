@@ -1,1 +1,22 @@
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 20px 0;
+  /* background-color: aqua; */
+}
 
+.mainLink {
+  text-decoration: none;
+  color: #532e1c;
+  font-weight: bold;
+  font-size: 22px;
+  transition: all 0.7s ease-in-out;
+  /* letter-spacing: 0.02rem; */
+}
+
+.mainLink:hover {
+    text-decoration: underline;
+    color: #532e1ce0;
+    letter-spacing: 0.1rem;
+}

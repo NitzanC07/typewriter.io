@@ -8,6 +8,8 @@ import { useState } from "react";
 import PopupTableOfContents from "@/components/Popups/PopupTableOfContents";
 import TitleText from "@/components/TitleText/TitleText";
 import MainButton from "@/ui/MainButton/MainLink";
+import Image from "next/image";
+import ImageSingle from "@/components/ImageSingle/ImageSingle";
 
 export default function CoursePage() {
   const [isPopupTableOfContentsVisibility, setPopupTableOfContentsVisibility] =
@@ -55,12 +57,19 @@ export default function CoursePage() {
             {section.textBlock && (
               <Paragraph key={index} text={section.textBlock} />
             )}
-            {section.bigButton && (
-              <MainButton text={section.bigButton.text} urlLink={section.bigButton.urlLink} />
+            {section.mainLink && (
+              <MainButton
+                text={section.mainLink.text}
+                urlLink={section.mainLink.urlLink}
+              />
+            )}
+            {section.image && (
+              <ImageSingle image={section.image} />
             )}
           </div>
         ))}
 
+        <Timeline />
         {isPopupTableOfContentsVisibility && (
           <PopupTableOfContents
             isVisibility={isPopupTableOfContentsVisibility}
